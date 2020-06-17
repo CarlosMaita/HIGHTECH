@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCourseRequestsTable extends Migration
+class CreateMotoParametersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateCourseRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('course_requests_', function (Blueprint $table) {
+        Schema::create('moto_parameters', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('correo');
-            $table->string('pais');
-            $table->string('empresa');
-            $table->string('fecha');
-            $table->unsignedBigInteger('course_id');
+            $table->foreignId('product_id');
+            $table->integer('d_interno');
+            $table->integer('d_externo');
+            $table->integer('espesor');
+            $table->foreignId('tipo_sello_id');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateCourseRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_requests_');
+        Schema::dropIfExists('moto_parameters');
     }
 }

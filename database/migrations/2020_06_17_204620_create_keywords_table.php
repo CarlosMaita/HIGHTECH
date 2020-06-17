@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiceImagesTable extends Migration
+class CreateKeywordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateServiceImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_images', function (Blueprint $table) {
+        Schema::create('keywords', function (Blueprint $table) {
             $table->id();
-            $table->string('imagen');
-            $table->unsignedBigInteger('service_id');
+            $table->string('keyword');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateServiceImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_images');
+        Schema::dropIfExists('keywords');
     }
 }

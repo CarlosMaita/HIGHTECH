@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Curso extends Model
+class Forma_chum extends Model
 {
-    protected $table = 'cursos';
-
+    protected $table = 'forma_chum';
 }

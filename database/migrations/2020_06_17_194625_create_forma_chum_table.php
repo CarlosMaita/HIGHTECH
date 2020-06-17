@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHomeSlidersTable extends Migration
+class CreateFormaChumTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateHomeSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('home_sliders', function (Blueprint $table) {
+        Schema::create('forma_chum', function (Blueprint $table) {
             $table->id();
-            $table->string('imagen');
-            $table->string('titulo');
-            $table->string('descripcion');
-            $table->string('url');
-            $table->string('orden');
+            $table->string('forma_chum');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateHomeSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home_sliders');
+        Schema::dropIfExists('forma_chum');
     }
 }

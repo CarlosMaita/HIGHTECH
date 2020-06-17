@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCourseCategoriesTable extends Migration
+class Create6000ParametersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateCourseCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('course_categories', function (Blueprint $table) {
+        Schema::create('6000_parameters', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('descripcion');
-            $table->string('imagen');
+            $table->foreignId('product_id');
+            $table->integer('rodamiento');
+            $table->foreignId('tipo_sello_id');
+            $table->integer('d_interno');
+            $table->integer('d_externo');
+            $table->string('espesor');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateCourseCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_categories');
+        Schema::dropIfExists('6000_parameters');
     }
 }
