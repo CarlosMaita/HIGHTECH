@@ -26,13 +26,13 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($subscriptores as $subscriptor)
+        @foreach( as )
           <tr>
-            <td>{{$subscriptor->id}}</td>
-            <td>{{$subscriptor->nombre}}</td>
-            <td>{{$subscriptor->email}}</td>
-            <td>{{$subscriptor->empresa}}</td>
-            <td>{{$subscriptor->pais}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
         @endforeach
       </tbody>
