@@ -3,27 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Service;
+use App\Product;
 use App\Category;
 use File;
 
-class ServicioController extends Controller
+class ProductController extends Controller
 {
     public function index(){
-    	$servicios = Service::all();
-    	return view('cms.servicios.servicios')->with(compact('servicios'));
+    	$productos = Product::all();
+    	return view('cms.productos.productos')->with(compact('productos'));
     }
 
-    public function crearServicio(){
+    public function crearProducto(){
     	$categorias = Category::all();
-    	return view('cms.servicios.crear_servicio')->with(compact('categorias'));
+    	return view('cms.productos.crear_producto')->with(compact('categorias'));
     }
 
 
     public function guardarServicio(Request $request){
         $file = $request->file('imagen_servicio');
 
-    	$servicio = new Service;
+    	$servicio = new Product;
     	$servicio->titulo = $request->titulo_servicio;
     	$servicio->categoria_id = $request->categoria_servicio; 
     	$servicio->descripcion =$request->descripcion_servicio;
@@ -48,14 +48,14 @@ class ServicioController extends Controller
     }
 
     public function editarServicio(Request $request, $id){
-        $servicio = Service::find($id);
+        $servicio = Product::find($id);
         $categorias = Category::all();
         return view('cms.servicios.editar_servicios')->with(compact('servicio', 'categorias'));
     }
 
     public function actualizarServicio(Request $request, $id){
         $file = $request->file('imagen_servicio');
-        $servicio = Service::find($id);
+        $servicio = Product::find($id);
 
         $servicio->titulo = $request->titulo_servicio;
         $servicio->categoria_id = $request->categoria_servicio; 
@@ -103,7 +103,7 @@ class ServicioController extends Controller
 
 
     public function eliminarServicio(Request $request, $id){
-        $servicio = Service::find($id);
+        $servicio = Product::find($id);
         if($servicio->imagen){
             if(substr($servicio->imagen, 0, 4)  === "http"){
                 $deleted = true;

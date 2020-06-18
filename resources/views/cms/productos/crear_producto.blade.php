@@ -20,19 +20,27 @@
         <div class="row col-md-6">
           <div class="col-12 mb-4">
             <h5>Titulo</h5>
-            <input class="form-control" type="text" name="titulo_servicio" value="" placeholder="Titulo">
+            <input class="form-control" type="text" name="titulo_producto" value="" placeholder="Titulo">
           </div>
           <div class="col-12 mb-4">
             <h5>Descripción</h5>
-            <textarea class="form-control" name="descripcion_servicio"></textarea>
+            <textarea class="form-control" name="descripcion_producto"></textarea>
+          </div>
+          <div class="col-12 mb-4">
+            <h5>Precio</h5>
+            <input class="form-control" type="text" name="precio_producto" value="" placeholder="Precio">
+          </div>
+          <div class="col-12 mb-4">
+            <h5>Codigo Universal</h5>
+            <input class="form-control" type="text" name="codigo_servicio" value="" placeholder="Titulo">
           </div>
           <div class="col-12 mb-4">
             <h5 style="display: block">Imagen</h5>
-            <input type="file" name="imagen_servicio">
+            <input type="file" name="imagen_producto">
           </div>
           <div class="col-12 mb-4">
             <h5>Categoría</h5>
-            <select name="categoria_servicio" class="form-control form-control">
+            <select name="categoria_producto" class="form-control form-control">
               <option>Seleccionar Categoria</option>
               @foreach($categorias as $categoria)
               <option value="{{$categoria->id}}">{{$categoria->name}}</option>

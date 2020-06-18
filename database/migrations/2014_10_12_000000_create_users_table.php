@@ -17,12 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('pais');
-            $table->string('empresa');
+            // $table->string('pais');
+            // $table->string('empresa');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('status')->default('activo');
-            $table->unsignedBigInteger('plan_id');
+            // $table->string('status')->default('activo');
+            // $table->unsignedBigInteger('plan_id');
             $table->rememberToken();
             $table->timestamps();
         });

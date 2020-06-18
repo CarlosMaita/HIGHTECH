@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Create6000ParametersTable extends Migration
+class CreateSerie6000ParametersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Create6000ParametersTable extends Migration
      */
     public function up()
     {
-        Schema::create('6000_parameters', function (Blueprint $table) {
+        Schema::create('serie6000_parameters', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id');
             $table->integer('rodamiento');
@@ -22,6 +22,12 @@ class Create6000ParametersTable extends Migration
             $table->integer('d_externo');
             $table->string('espesor');
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')
+                ->onDelete('cascade');
+
+            $table->foreign('tipo_sello_id')->references('id')->on('tipo_sello')
+                ->onDelete('cascade');
         });
     }
 
@@ -32,6 +38,6 @@ class Create6000ParametersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('6000_parameters');
+        Schema::dropIfExists('serie6000_parameters');
     }
 }

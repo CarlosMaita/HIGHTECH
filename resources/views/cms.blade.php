@@ -66,6 +66,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/cms/productos">
+              <span data-feather="users"></span>
+              Productos
+            </a>
+          </li>
+<!--           <li class="nav-item">
             <a class="nav-link" href="/cms/informacion">
               <span data-feather="file"></span>
               Informacion
@@ -112,13 +118,7 @@
               <span data-feather="users"></span>
               Crear Usuarios
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cms/slider/image">
-              <span data-feather="users"></span>
-              Imagenes Slider
-            </a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2"></span>

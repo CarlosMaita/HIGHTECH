@@ -20,7 +20,16 @@ class CreateAutoParametersTable extends Migration
             $table->text('aplicacion');
             $table->foreignId('posicion_id');
             $table->integer('d_interno');
+            $table->integer('d_externo');
+            $table->integer('espesor');
             $table->timestamps();
+
+
+            $table->foreign('product_id')->references('id')->on('products')
+                ->onDelete('cascade');
+
+            $table->foreign('posicion_id')->references('id')->on('posiciones')
+                ->onDelete('cascade');
         });
     }
 

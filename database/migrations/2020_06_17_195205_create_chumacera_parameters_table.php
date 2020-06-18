@@ -26,6 +26,15 @@ class CreateChumaceraParametersTable extends Migration
             $table->foreign('product_id')->references('id')->on('products')
                 ->onDelete('cascade');
 
+            $table->foreign('diametro_chum_id')->references('id')->on('diametro_chum')
+                ->onDelete('cascade');
+
+            $table->foreign('tipo_chum_id')->references('id')->on('tipo_chum')
+                ->onDelete('cascade');
+
+            $table->foreign('forma_chum_id')->references('id')->on('forma_chum')
+                ->onDelete('cascade');
+
 
         });
     }

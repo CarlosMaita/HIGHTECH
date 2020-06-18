@@ -14,7 +14,7 @@
     <h1 class="h2">Servicios</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
-        <a href="/cms/crear/servicios" type="button" class="btn btn-sm btn-outline-secondary">Agregar Servicio</a>
+        <a href="/cms/crear/productos" type="button" class="btn btn-sm btn-outline-secondary">Agregar Producto</a>
       </div>
     </div>
   </div>
@@ -28,21 +28,23 @@
           <th>Titulo</th>
           <th>Descripción</th>
           <th>Categoría</th>
+          <th>precio</th>
+          <th>codigo universal</th>
           <th>Imagen</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
-        @foreach($servicios as $servicio)
+        @foreach($productos as $producto)
           <tr>
-            <td>{{$servicio->id}}</td>
-            <td>{{$servicio->titulo}}</td>
-            <td>{{$servicio->descripcion}}</td>
-            <td>{{$servicio->categoria->name}}</td>
+            <td>{{$producto->id}}</td>
+            <td>{{$producto->titulo}}</td>
+            <td>{{$producto->descripcion}}</td>
+            <td>{{$producto->categoria->name}}</td>
             <td>
-              @if(substr($servicio->imagen, 0, 4) === 'http')
+              @if(substr($producto->imagen, 0, 4) === 'http')
                   <img src="{{ $servicio->imagen }}" class="publicidades_card-img" alt="" style="width: 60px; height: 60px;">
-              @elseif($servicio->imagen)
+              @elseif($producto->imagen)
                    <img src="{{ asset('servicios_imagen/'. $servicio->imagen) }}" alt="" style="width: 60px; height: 60px;">
               @endif
             </td>
