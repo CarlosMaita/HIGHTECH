@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-        	'category' => 'categoria1',
+        	'category' => 'Serie Automotriz',
         	'description' => 'esta es una categoria',
         	'imagen' => 'https://picsum.photos/400/400',
         	'pdf' => 'aqui va el pdf',
@@ -21,11 +21,45 @@ class CategorySeeder extends Seeder
         ]);
 
         DB::table('categories')->insert([
-        	'category' => 'categoria2',
+        	'category' => 'Serie 6000',
         	'description' => 'esta es una categoria',
         	'imagen' => 'https://picsum.photos/400/400',
         	'pdf' => 'aqui va el pdf',
         	'category_color' => 'red'
         ]);
+
+        DB::table('categories')->insert([
+            'category' => 'Serie Moto',
+            'description' => 'esta es una categoria',
+            'imagen' => 'https://picsum.photos/400/400',
+            'pdf' => 'aqui va el pdf',
+            'category_color' => 'red'
+        ]);
+
+        
+        DB::table('categories')->insert([
+            'category' => 'Chumaceras',
+            'description' => 'esta es una categoria',
+            'imagen' => 'https://picsum.photos/400/400',
+            'pdf' => 'aqui va el pdf',
+            'category_color' => 'red'
+        ]);
+
+        DB::table('categories')->insert([
+            'category' => 'Serie cadenas',
+            'description' => 'esta es una categoria',
+            'imagen' => 'https://picsum.photos/400/400',
+            'pdf' => 'aqui va el pdf',
+            'category_color' => 'red'
+        ]);
+
+        DB::table('categories')->insert([
+            'category' => 'Otros',
+            'description' => 'esta es una categoria',
+            'imagen' => 'https://picsum.photos/400/400',
+            'pdf' => 'aqui va el pdf',
+            'category_color' => 'red'
+        ]);
+
     }
 }
