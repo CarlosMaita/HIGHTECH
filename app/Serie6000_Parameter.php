@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Moto_Parameter extends Model
+class Serie6000_Parameter extends Model
 {
-    protected $table = 'moto_parameters';
+    protected $table = 'serie6000_parameters';
 
     public function product()
     {

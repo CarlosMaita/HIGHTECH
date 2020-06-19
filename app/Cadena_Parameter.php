@@ -6,5 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cadena_Parameter extends Model
 {
-    protected $table = 'posiciones';
+    protected $table = 'cadena_parameters';
+
+    public function product()
+    {
+    	return $this->belongsTo('App\Product', 'product_id');
+    }
+
+    public function tipoCadena()
+    {
+    	return $this->belongsTo('App\Tipo_Cadena', 'tipo_cadena_id');
+    }
+
+    public function tipoEmpate()
+    {
+    	return $this->belongsTo('App\Tipo_Empates', 'empate_id');
+    }
 }
