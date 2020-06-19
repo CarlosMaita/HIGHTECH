@@ -15,12 +15,17 @@ class DatabaseSeeder extends Seeder
     {
     	 //$this->call(UserSeeder::class);
 
-    	$this->call(CategorySeeder::class);
-
         DB::table('users')->insert([
             'name' => 'Andres',
             'email' => 'omega@example.com',
             'password' => Hash::make('omega1234')
         ]); 
+
+    	$this->call(CategorySeeder::class);
+        $this->call(FormaChumaceraSeeder::class);
+        $this->call(PosicionSeeder::class);
+        $this->call(TipoCadenaSeeder::class);
+        $this->call(TipoChumaceraSeeder::class);
+        $this->call(TipoEmpateSeeder::class);
     }
 }
