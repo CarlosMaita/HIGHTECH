@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            // $table->foreignId('category_id');
             $table->string('titulo');
             $table->string('imagen');
             $table->string('descripcion');
@@ -24,7 +24,8 @@ class CreateProductsTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('category_id')->references('id')->on('categories');
+            // $table->foreign('category_id')->references('id')->on('categories');;
+            
         });
     }
 
@@ -35,6 +36,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products_');
+        Schema::dropIfExists('products');
     }
 }
