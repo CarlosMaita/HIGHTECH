@@ -51,7 +51,7 @@
               @endif
             </td>
             <td class="d-flex">
-              <a href="/cms/editar//{{$producto->id}}"class="btn btn-sm btn-outline-secondary mr-2 editar">Editar</a>
+              <a href="/cms/editar/producto/{{$producto->id}}"class="btn btn-sm btn-outline-secondary mr-2 editar">Editar</a>
               <form action="/cms/eliminar/producto/{{$producto->id}}" method="POST">
                 @csrf
                 @method('DELETE')

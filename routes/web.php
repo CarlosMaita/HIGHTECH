@@ -35,6 +35,8 @@ Route::middleware('auth')->group(function () {
 	Route::get('/cms/productos', 'ProductController@index');
 	Route::get('/cms/crear/productos', 'ProductController@crearProducto');
 	Route::post('/cms/guardar/producto', 'ProductController@guardarProducto');
+	Route::get('/cms/editar/producto/{id}', 'ProductController@editarProducto');
+	Route::post('/cms/actualizar/producto/{id}', 'ProductController@actualizarProducto');
 	Route::delete('/cms/eliminar/producto/{id}', 'ProductController@eliminarProducto');
 
 	// Route::get('/cms/subscriptores', 'CmsController@subscribersView' );
