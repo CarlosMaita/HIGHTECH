@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Auto_Parameter extends Model
 {
-    protected $table = 'auto_parameters';
 
+	protected $fillable = [
+        'product_id', 'articulo', 'aplicacion', 'posicion_id' , 'd_interno', 'd_externo', 'espesor'
+    ];
+
+    protected $table = 'auto_parameters';
 
     public function product()
     {

@@ -27,5 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TipoCadenaSeeder::class);
         $this->call(TipoChumaceraSeeder::class);
         $this->call(TipoEmpateSeeder::class);
+        $this->call(DiametroChumSeeder::class);
+        $this->call(TipoSelloSeeder::class);
     }
 }

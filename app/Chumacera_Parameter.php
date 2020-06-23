@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chumacera_Parameter extends Model
 {
+
+    protected $fillable = [
+        'product_id', 'diametro_chum_id', 'tipo_chum_id', 'forma_chum_id' , 'No_huecos'
+    ];
+
     protected $table = 'chumacera_parameters';
 
     public function product()

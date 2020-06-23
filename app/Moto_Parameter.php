@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Moto_Parameter extends Model
 {
+
+	protected $fillable = [
+        'product_id', 'd_interno', 'espesor' , 'd_externo', 'tipo_sello_id'
+    ];
+
     protected $table = 'moto_parameters';
 
     public function product()

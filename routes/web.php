@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
 
 	Route::get('/cms/productos', 'ProductController@index');
 	Route::get('/cms/crear/productos', 'ProductController@crearProducto');
+	Route::post('/cms/guardar/producto', 'ProductController@guardarProducto');
+	Route::delete('/cms/eliminar/producto/{id}', 'ProductController@eliminarProducto');
 
 	// Route::get('/cms/subscriptores', 'CmsController@subscribersView' );
 	// Route::get('/cms/club', 'CmsController@clubView');
