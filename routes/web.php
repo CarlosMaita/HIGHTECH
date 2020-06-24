@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 	Route::get('/cms', 'CmsController@index');
 
-	/* ----------  RUTA USUARIOS CONTROLLADOR ---------*/ 
+	/* ----------  RUTA PRODUCTOS CONTROLLADOR ---------*/ 
 
 	Route::get('/cms/productos', 'ProductController@index');
 	Route::get('/cms/crear/productos', 'ProductController@crearProducto');
@@ -39,58 +39,15 @@ Route::middleware('auth')->group(function () {
 	Route::post('/cms/actualizar/producto/{id}', 'ProductController@actualizarProducto');
 	Route::delete('/cms/eliminar/producto/{id}', 'ProductController@eliminarProducto');
 
-	// Route::get('/cms/subscriptores', 'CmsController@subscribersView' );
-	// Route::get('/cms/club', 'CmsController@clubView');
-	// Route::get('/cms/categorias', 'CmsController@categoryView');
-	// Route::get('/cms/informacion', 'InformationController@index');
-	// Route::get('/cms/servicios', 'ServicioController@index');
-	// Route::get('/cms/publicidades', 'PublicidadController@index');
-	// Route::get('/cms/cursos', 'CursoController@index');
-	// Route::get('/cms/slider/image', 'SliderImageController@index');
-	// Route::get('/cms/crear/usuario', 'UserController@index');
+	/* ----------  RUTA CATEGROIAS BLOG CONTROLLADOR ---------*/ 
+	Route::get('/cms/blog/categorias', 'Blog\CategoriesController@index');
+	Route::get('/cms/blog/crear/categoria', 'Blog\CategoriesController@crearCategoria');
+	Route::post('/cms/blog/guardar/categoria', 'Blog\CategoriesController@guardarCategoria');
+	Route::get('/cms/blog/editar/categoria/{id}', 'Blog\CategoriesController@editarCategoria');
+	Route::post('/cms/blog/actualizar/categoria/{id}', 'Blog\CategoriesController@actualizarCategoria');
+	Route::delete('/cms/blog/eliminar/categoria/{id}', 'Blog\CategoriesController@eliminarCategoria');
 
-	// 	/* ----------  RUTA USUARIOS CONTROLLADOR ---------*/ 
-	// Route::post('cms/guardar/usuario', 'UserController@crearUsuario');
 
-	// 	/* ----------  RUTA CLUB CONTROLLADOR ---------*/ 
-	// Route::post('/club/user/pause/{id}', 'ClubController@pauseClubMember');
-	// Route::post('/club/user/active/{id}', 'ClubController@activeClubMember');
-
-	// 	/* ----------  RUTA CATEGORIAS CONTROLLADOR ---------*/ 
-	// Route::get('cms/categoria/{id}', 'CategoryController@getCategory');
-	// Route::post('cms/categoria/create', 'CategoryController@createCategory');
-	// Route::post('cms/categoria/edit/{id}', 'CategoryController@editCategory');
-	// Route::post('cms/categoria/delete/{id}', 'CategoryController@deleteCategory');
-
-	// 	/* ----------  RUTA SERVICIOS CONTROLLADOR ---------*/ 
-	// Route::get('/cms/editar/servicio/{id}', 'ServicioController@editarServicio');
-	// Route::post('/cms/actualizar/servicio/{id}', 'ServicioController@actualizarServicio');
-	// Route::get('/cms/crear/servicios', 'ServicioController@crearServicio');
-	// Route::post('/cms/guardar/servicio', 'ServicioController@guardarServicio');
-	// Route::post('/cms/eliminar/servicio/{id}', 'ServicioController@eliminarServicio');
-
-	// 	/* ----------  RUTA PUBLICIDADES CONTROLLADOR ---------*/ 
-	// Route::get('/cms/crear/publicidad/{tipo}', 'PublicidadController@crearPublicidad');
-	// Route::post('/cms/guardar/publicidad', 'PublicidadController@guardarPublicidad');
-	// Route::post('/cms/actualizar/publicidad/{id}', 'PublicidadController@actualizarPublicidad');
-	// Route::post('/cms/actualizar/imagen/publicidad/{id}', 'PublicidadController@actualizarImagenPublicidad');
-	// Route::post('/cms/eliminar/publicidad/{id}', 'PublicidadController@eliminarPublicidad');
-
-	// /* ----------  RUTA PUBLICIDADES CONTROLLADOR ---------*/ 
-
-	// Route::get('/cms/crear/curso', 'CursoController@crearCurso');
-	// Route::post('/cms/guardar/curso', 'CursoController@guardarCurso');
-	// Route::get('/cms/editar/curso/{id}', 'CursoController@editarCurso');
-	// Route::post('/cms/actualizar/curso/{id}', 'CursoController@actualizarCurso');
-	// Route::post('/cms/actualizar/imagen/curso/{id}', 'CursoController@actualizarImagenCurso');
-	// Route::post('/cms/eliminar/curso/{id}', 'CursoController@eliminarCurso');
-
-	// /* ----------  RUTA PUBLICIDADES CONTROLLADOR ---------*/ 
-	// Route::post('/cms/guardar/informacion', 'InformationController@actualizarInformacion');
-
-	// /* ----------  RUTA IMAGENES SLIDER CONTROLLADOR ---------*/ 
-	// Route::get('/cms/crear/slider/image/{tipo}', 'SliderImageController@crearImageSlider');
-	// Route::post('/cms/guardar/slider/image', 'SliderImageController@guardarImageSlider');
 });
 
 /*------------------------------------ END --------------------------*/
