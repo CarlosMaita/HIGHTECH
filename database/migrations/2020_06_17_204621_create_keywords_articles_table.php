@@ -18,6 +18,9 @@ class CreateKeywordsArticlesTable extends Migration
             $table->foreignId('article_id');
             $table->foreignId('keyword_id');
             $table->timestamps();
+
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
+            $table->foreign('keyword_id')->references('id')->on('keywords')->onDelete('cascade');
         });
     }
 

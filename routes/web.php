@@ -47,7 +47,13 @@ Route::middleware('auth')->group(function () {
 	Route::post('/cms/blog/actualizar/categoria/{id}', 'Blog\CategoriesController@actualizarCategoria');
 	Route::delete('/cms/blog/eliminar/categoria/{id}', 'Blog\CategoriesController@eliminarCategoria');
 
-
+	/* ----------  RUTA ARTICULOS BLOG CONTROLLADOR ---------*/ 
+	Route::get('/cms/blog/articulos', 'Blog\ArticuloController@index');
+	Route::get('/cms/blog/crear/articulos', 'Blog\ArticuloController@create');
+	Route::post('/cms/blog/guardar/articulo', 'Blog\ArticuloController@store');
+	Route::get('/cms/blog/editar/articulo/{id}', 'Blog\ArticuloController@show');
+	Route::post('/cms/blog/actualizar/articulo/{id}', 'Blog\ArticuloController@edit');
+	Route::delete('/cms/blog/eliminar/articulo/{id}', 'Blog\ArticuloController@destroy');
 });
 
 /*------------------------------------ END --------------------------*/

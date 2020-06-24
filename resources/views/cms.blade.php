@@ -77,6 +77,12 @@
               Categorias Blog
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cms/blog/articulos">
+              <span data-feather="users"></span>
+              Articulos Blog
+            </a>
+          </li>
 <!--           <li class="nav-item">
             <a class="nav-link" href="/cms/informacion">
               <span data-feather="file"></span>

@@ -23,6 +23,8 @@ class CreateArticlesTable extends Migration
             $table->string('keywords');
             $table->date('date');
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('blog_categories')->onDelete('cascade');
         });
     }
 
