@@ -51,8 +51,8 @@ Route::middleware('auth')->group(function () {
 	Route::get('/cms/blog/articulos', 'Blog\ArticuloController@index');
 	Route::get('/cms/blog/crear/articulos', 'Blog\ArticuloController@create');
 	Route::post('/cms/blog/guardar/articulo', 'Blog\ArticuloController@store');
-	Route::get('/cms/blog/editar/articulo/{id}', 'Blog\ArticuloController@show');
-	Route::post('/cms/blog/actualizar/articulo/{id}', 'Blog\ArticuloController@edit');
+	Route::get('/cms/blog/editar/articulo/{id}', 'Blog\ArticuloController@edit');
+	Route::post('/cms/blog/actualizar/articulo/{id}', 'Blog\ArticuloController@update');
 	Route::delete('/cms/blog/eliminar/articulo/{id}', 'Blog\ArticuloController@destroy');
 });
 

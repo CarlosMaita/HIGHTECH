@@ -84,10 +84,7 @@ class ArticuloController extends Controller
      */
     public function show($id)
     {
-        $articulo = Article::find($id);
-        $categorias = Category::all();
-
-        return view('cms.blog.articulos.editar_articulos')->with(compact('articulo', 'categorias'));
+        
     }
 
     /**
@@ -97,6 +94,21 @@ class ArticuloController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Request $request, $id)
+    {
+        $articulo = Article::find($id);
+        $categorias = Category::all();
+
+        return view('cms.blog.articulos.editar_articulos')->with(compact('articulo', 'categorias'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
         $file = $request->file('article_picture');
         $articulo = Article::find($id);
@@ -142,18 +154,6 @@ class ArticuloController extends Controller
         }
 
         return back()->with('message', 'Articulo actualizado con éxito');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**

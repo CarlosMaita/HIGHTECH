@@ -43,7 +43,7 @@
 				<h5>Imagen</h5>
 				<input type="file" name="article_picture">
 			</div>
-			<input type="submit" class="btn btn-primary mb-4" value="Crear Categoria">
+			<input type="submit" class="btn btn-primary mb-4" value="Actualizar Articulo">
 		</form>
 	</div>
 </section>
