@@ -18,6 +18,9 @@ class CreatePictureArticlesTable extends Migration
             $table->string('picture');
             $table->foreignId('article_id');
             $table->timestamps();
+
+            
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
         });
     }
 

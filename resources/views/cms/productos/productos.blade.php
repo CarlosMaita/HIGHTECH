@@ -11,7 +11,7 @@
   @endif
 
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Servicios</h1>
+    <h1 class="h2">Productos</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <div class="btn-group mr-2">
         <a href="/cms/crear/productos" type="button" class="btn btn-sm btn-outline-secondary">Agregar Producto</a>
@@ -40,18 +40,21 @@
             <td>{{$producto->id}}</td>
             <td>{{$producto->titulo}}</td>
             <td>{{$producto->descripcion}}</td>
-            <td>{{$producto->categoria->name}}</td>
+            <td>{{$producto->categoria->category}}</td>
+            <td>{{$producto->precio }}</td>
+            <td>{{$producto->codigo_universal }}</td>
             <td>
               @if(substr($producto->imagen, 0, 4) === 'http')
-                  <img src="{{ $servicio->imagen }}" class="publicidades_card-img" alt="" style="width: 60px; height: 60px;">
+                  <img src="{{ $producto->imagen }}" class="publicidades_card-img" alt="" style="width: 60px; height: 60px;">
               @elseif($producto->imagen)
-                   <img src="{{ asset('servicios_imagen/'. $servicio->imagen) }}" alt="" style="width: 60px; height: 60px;">
+                   <img src="{{ asset('productos_imagen/'. $producto->imagen) }}" alt="" style="width: 60px; height: 60px;">
               @endif
             </td>
             <td class="d-flex">
-              <a href="/cms/editar/servicio/{{$servicio->id}}"class="btn btn-sm btn-outline-secondary mr-2 editar">Editar</a>
-              <form action="/cms/eliminar/servicio/{{$servicio->id}}" method="POST">
+              <a href="/cms/editar/producto/{{$producto->id}}"class="btn btn-sm btn-outline-secondary mr-2 editar">Editar</a>
+              <form action="/cms/eliminar/producto/{{$producto->id}}" method="POST">
                 @csrf
+                @method('DELETE')
                 <input type="submit" value="Eliminar" type="button" class="btn btn-sm btn-outline-secondary">
               </form>
             </td>

@@ -15,7 +15,7 @@
           {{session('message')}}
         </div>
       @endif
-      <form action="/cms/guardar/servicio" method="POST" enctype="multipart/form-data">
+      <form action="/cms/guardar/producto" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="col-12 col-md-6 mb-4">
@@ -52,27 +52,34 @@
 
           <!-- Chumacera formulario -->
           <div class="params-forms" id="chumacera" style="display: none;">
+            <input type="hidden" class="input-hidden" name="chumacera_info" value="" id="chumacera_inputs">
             <div class="row">
               <h3 class="col-12 mb-4">Parametros Chumacera</h3>
               <div class="col-12 col-md-6">
 
                 <h5>Diametro chumacera</h5>
                 <select class="form-control mb-4" name="diametro_chumacera">
-                  <option>diametro_chum</option>
+                  @foreach($diametros_chum as $diametro)
+                    <option value="{{$diametro->id}}">{{$diametro->valor}}</option>
+                  @endforeach
                 </select>
               </div>
 
               <div class="col-12 col-md-6">
                 <h5>Tipo chumacera</h5>
                 <select class="form-control mb-4" name="tipo_chumacera">
-                  <option>tipo_chum</option>
+                  @foreach($tipos_chum as $tipo)
+                    <option value="{{$tipo->id}}">{{$tipo->tipo_chum}}</option>
+                  @endforeach
                 </select>
               </div>
 
               <div class="col-12 col-md-6">
                 <h5>Forma chumacera</h5>
                 <select class="form-control mb-4" name="forma_chumacera">
-                  <option>forma_chum</option>
+                  @foreach($formas_chum as $forma)
+                    <option value="{{$forma->id}}">{{$forma->forma_chum}}</option>
+                  @endforeach
                 </select>
               </div>
 
@@ -88,6 +95,7 @@
 
 
           <div class="params-forms" id="cadena" style="display: none;">
+            <input type="hidden" class="input-hidden" name="cadena_info" value="" id="cadena_inputs">
             <div class="row">
               <h3 class="col-12 mb-4">Parametros Cadena</h3>
               <div class="col-12 mb-4">
@@ -98,14 +106,18 @@
               <div class="col-12 col-md-6 mb-4">
                 <h5>Tipo Cadena</h5>
                 <select class="form-control mb-4" name="tipo_cadena">
-                  <option>tipo_cadena</option>
+                  @foreach($tipos_cadenas as $tipo_cadena)
+                    <option value="{{$tipo_cadena->id}}">{{$tipo_cadena->tipo_cadena_texto}}</option>
+                  @endforeach
                 </select>
               </div>
 
               <div class="col-12 col-md-6 mb-4">
                 <h5>Empate Cadena</h5>
                 <select class="form-control" name="empate_cadena">
-                  <option>empate_cadena</option>
+                  @foreach($tipos_empates as $tipo_empate)
+                    <option value="{{$tipo_empate->id}}">{{$tipo_empate->tipo_empate}}</option>
+                  @endforeach
                 </select>
               </div>
             </div>
@@ -116,6 +128,7 @@
 
 
           <div class="params-forms" id="moto" style="display: none;">
+            <input type="hidden" class="input-hidden" name="moto_info" value="" id="moto_inputs">
             <div class="row">
               <h3 class="col-12 mb-4">Parametros Moto</h3>
               <div class="col-12 col-md-6 mb-4">
@@ -136,7 +149,9 @@
               <div class="col-12 col-md-6 mb-4">
                 <h5>Tipo de Sello</h5>
                 <select class="form-control" name="sello_moto">
-                  <option>tipo_sello</option>
+                  @foreach($tipo_sellos as $tipo_sello)
+                    <option value="{{$tipo_sello->id}}">{{$tipo_sello->tipo_sello}}</option>
+                  @endforeach
                 </select>
               </div>
             </div>
@@ -146,6 +161,7 @@
           <!-- Serie6000  formulario -->
 
           <div class="params-forms" id="serie6000" style="display: none;">
+            <input type="hidden" class="input-hidden" name="serie6000_info" value="" id="serie6000_inputs">
             <div class="row">
               <h3 class="col-12 mb-4">Serie6000 Parametros</h3>
               <div class="col-12 mb-4">
@@ -156,7 +172,9 @@
               <div class="col-12 col-md-6 mb-4">
                 <h5>Tipo de Sello</h5>
                 <select class="form-control" name="sello_serie6000">
-                  <option>tipo_sello</option>
+                  @foreach($tipo_sellos as $tipo_sello)
+                    <option value="{{$tipo_sello->id}}">{{$tipo_sello->tipo_sello}}</option>
+                  @endforeach
                 </select>
               </div>
 
@@ -181,6 +199,7 @@
           <!-- Auto  formulario -->
 
           <div class="params-forms" id="auto" style="display: none;">
+            <input type="hidden" class="input-hidden" name="auto_info" value="" id="auto_inputs">
             <div class="row">
               <h3 class="col-12 mb-4">Auto Parametros</h3>
               <div class="col-12  mb-4">
@@ -196,7 +215,9 @@
               <div class="col-12 col-md-6 mb-4">
                 <h5>Posicion</h5>
                 <select class="form-control" name="posicion_auto">
-                  <option>posicion_id</option>
+                  @foreach($posiciones as $posicion)
+                    <option value="{{$posicion->id}}">{{$posicion->posicion}}</option>
+                  @endforeach
                 </select>
               </div>
 
@@ -249,25 +270,35 @@
     if (target.text === "Serie Automotriz") {
       
       let form = document.querySelector('#auto')
+      let inputHidden = document.querySelector('#auto_inputs');
+      inputHidden.value = 'active'
       form.style.display = 'flex';
 
     } else if(target.text === "Serie 6000") {
       
       let form = document.querySelector('#serie6000')
+      let inputHidden = document.querySelector('#serie6000_inputs');
+      inputHidden.value = 'active'
       form.style.display = 'flex';
 
     } else if(target.text === "Serie Moto") {
 
       let form = document.querySelector('#moto')
+      let inputHidden = document.querySelector('#moto_inputs');
+      inputHidden.value = 'active'
       form.style.display = 'flex';
 
     } else if(target.text === "Serie cadenas") {
 
       let form = document.querySelector('#cadena')
+      let inputHidden = document.querySelector('#cadena_inputs');
+      inputHidden.value = 'active'
       form.style.display = 'flex';
 
     } else if(target.text === "Chumaceras") {
       let form = document.querySelector('#chumacera')
+      let inputHidden = document.querySelector('#chumacera_inputs');
+      inputHidden.value = 'active'
       form.style.display = 'flex';
     }
   }
@@ -275,9 +306,16 @@
 
 //resetea los formularios
   function offForms(){
-    
+    let inputsHiddens = document.querySelectorAll('.input-hidden');
+
+
+
     formularios.forEach( form => {
       form.style.display = 'none';
+    });
+
+    inputsHiddens.forEach( input => {
+      input.value = '';
     });
   }
 </script>
