@@ -14,9 +14,7 @@ use App\Subscriber;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/test', function(){
 	return view('page_new.src.service');
@@ -60,7 +58,7 @@ Route::middleware('auth')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 

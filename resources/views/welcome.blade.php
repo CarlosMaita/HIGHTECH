@@ -9,7 +9,6 @@
   </head>
   <body>
 
-
     <!-- header -->
     <header class="header-sticky header-light">
       <div class="container">
@@ -154,7 +153,6 @@
     </section>
     <!-- / cover -->
 
-
     <!-- destinations carousel -->
     <section class="section-decorated-bottom pt-0">
       <div class="decorated-bottom text-light">
@@ -256,7 +254,6 @@
     </section>
     <!-- / destinations carousel -->
 
-
     <!-- about -->
     <section class="bg-light pb-0">
       <div class="container">
@@ -325,7 +322,6 @@
       </div>
     </section>
     <!-- / about -->
-
 
     <!-- featured carousel -->
     <section class="bg-light pb-0">
@@ -406,7 +402,6 @@
     </section>
     <!-- / featured carousel -->
 
-
     <!-- testimonials -->
     <section class="bg-light section-decorated-bottom">
       <div class="decorated-bottom text-primary">
@@ -450,7 +445,6 @@
       </div>
     </section>
     <!-- / testimonials -->
-
 
     <!-- features -->
     <section class="bg-primary section-decorated-bottom">
@@ -512,8 +506,6 @@
     </section>
     <!-- / features -->
 
-
-
     <!-- video -->
     <section class="bg-light separator-bottom">
       <div class="container">
@@ -539,8 +531,6 @@
       </div>
     </section>
     <!-- / video -->
-
-
 
     <!-- blog -->
     <section class="bg-light">
@@ -579,7 +569,6 @@
       </div>
     </section>
     <!-- / blog -->
-
 
     <!-- footer -->
     <footer class="bg-dark text-white">
@@ -634,7 +623,6 @@
       </div>
     </footer>
     <!-- / footer -->
-
 
     <script src="../../assets/js/vendor.js"></script>
     <script src="../../assets/js/app.js"></script>
