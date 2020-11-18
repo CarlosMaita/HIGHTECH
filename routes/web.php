@@ -14,9 +14,12 @@ use App\Subscriber;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', 'HomeController@index')->name('home');
+
 
 Route::get('/test', function(){
 	return view('page_new.src.service');
@@ -25,8 +28,6 @@ Route::get('/test', function(){
 /* ----------------------------  RUTAS DE PRUEBA PARA EL CMS -----------------------*/ 
 
 Route::middleware('auth')->group(function () {
-
-
 
 	Route::get('/cms', 'CmsController@index');
 
@@ -60,7 +61,6 @@ Route::middleware('auth')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 
